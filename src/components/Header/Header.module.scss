@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 32px;
+
+  font-size: $font-size-desc-subheader;
+}
+
+.logo {
+    font-weight: $font-bold;
+    text-decoration: none;
+    color: $text-color;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-weight: $font-light;
+
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.menu {
+  display: none;
+}

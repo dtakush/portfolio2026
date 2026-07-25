@@ -1,0 +1,9 @@
+@import "./variables";
+
+body {
+    width: 100%;
+    max-width: 1440px;
+    font-family: "Gilroy", sans-serif;
+    color: $text-color;
+    background-color: $bg-color;
+}
