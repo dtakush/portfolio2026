@@ -1,0 +1,124 @@
+@use "../../styles/variables" as *;
+
+.gallery {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  padding-top: 200px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.gallery__heading {
+  width: 1280px;
+  margin: 0 auto 0;
+}
+
+.gallery__title {
+  font-size: $font-size-desc-subheader;
+  font-weight: $font-bold;
+  line-height: $line-height-main;
+}
+
+.gallery__subtitle {
+  margin-top: 9px;
+  font-size: $font-size-desc-main-text;
+  font-weight: $font-light;
+  line-height: $line-height-main;
+}
+
+.gallery__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery__track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  transform: translateX(calc(-1 * var(--slide-offset)));
+  transition: transform 500ms ease;
+}
+
+.gallery__slide {
+  display: flex;
+  flex: 0 0 auto;
+  width: fit-content;
+  height: 720px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: .2;
+  transition: opacity 500ms ease;
+}
+
+.gallery__slide--active {
+  opacity: 1;
+}
+
+.gallery__media {
+  display: block;
+  width: auto;
+  max-width: 1280px;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.gallery__controls {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 520px) 48px;
+  width: fit-content;
+  margin: 24px auto 0;
+  align-items: start;
+  column-gap: 48px;
+}
+
+.gallery__caption {
+  min-width: 520px;
+  text-align: center;
+}
+
+.gallery__caption p {
+  font-size: $font-size-desc-subheader;
+  font-weight: $font-light;
+  line-height: $line-height-main;
+}
+
+.gallery__caption span {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: $font-light;
+  line-height: $line-height-main;
+}
+
+.gallery__arrow {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery__arrow::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 31px;
+  height: 31px;
+  border-top: 1px solid $text-color;
+  border-right: 1px solid $text-color;
+}
+
+.gallery__arrow--previous::before {
+  left: 12px;
+  transform: rotate(-135deg);
+}
+
+.gallery__arrow--next::before {
+  right: 12px;
+  transform: rotate(45deg);
+}

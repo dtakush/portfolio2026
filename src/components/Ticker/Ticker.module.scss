@@ -1,0 +1,54 @@
+@use "../../styles/variables" as *;
+
+.ticker {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-top: 200px;
+  height: 51px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: ticker-scroll 45s linear infinite;
+  will-change: transform;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.ticker__group {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.ticker__item {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 43px;
+  padding-right: 43px;
+  color: $text-color;
+  font-size: $font-size-desc-subheader;
+  font-weight: $font-bold;
+  line-height: $line-height-main;
+  white-space: nowrap;
+}
+
+.ticker__divider {
+  width: 1px;
+  height: 51px;
+  background-color: $text-color;
+}
+
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}

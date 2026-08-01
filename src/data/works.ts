@@ -1,87 +1,206 @@
-export const works = [
+export interface WorkVideo {
+  id: number;
+  src: string;
+  alt: string;
+}
 
+export interface WorkImage {
+  id: number;
+  src: string;
+  alt: string;
+}
+
+export interface Work {
+  id: number;
+  slug: string;
+  title: string;
+  selectionSrc: string;
+  subtitle: string;
+  description: string[];
+  role: string;
+  tools: string;
+  results: string[];
+  images: WorkImage[];
+  video: WorkVideo[];
+}
+
+export const works: Work[] = [
   {
-    title: "плати частями",
-    category: "motion design",
-    year: "2026",
-    image: "/media/video/plati_chastyami.mp4",
-    type: "video",
+    id: 1,
+    slug: "megamarket",
+    title: "мегамаркет",
+    selectionSrc: "/media/images/selected_megamarket.svg",
+    subtitle: "новогодняя кампания для мегамаркета",
+    description: [
+      "разработала визуальную концепцию и наполнение предновогодней рекламной кампании, посвященной ассортименту мегамаркета. продуктовые ролики были созданы с помощью nano banana и kling, после чего я собрала финальный ролик в after effects, добавила анимацию, подобрала музыку и подготовила адаптации для разных форматов.",
+    ],
+    role: "разработка концепции, ai-продакшн, моушн-дизайн, монтаж",
+    tools: "figma, nano banana, kling, after effects",
+    results: [
+      "разработала кампанию от идеи до финальной реализации всего за 3 дня",
+      "интегрировала сгенерированные продуктовые ролики в единую визуальную концепцию",
+      "подготовила адаптации для различных рекламных площадок и форматов",
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/media/images/work_pic_1.png",
+        alt: "чашка чая для рекламной кампании Мегамаркета",
+      },
+      {
+        id: 2,
+        src: "/media/images/work_pic_2.png",
+        alt: "подарочная коробка для рекламной кампании Мегамаркета",
+      },
+      {
+        id: 3,
+        src: "/media/images/work_pic_3.png",
+        alt: "салат для рекламной кампании Мегамаркета",
+      },
+    ],
+    video: [
+      {
+        id: 1,
+        src: "/media/videos/megamarket.mp4",
+        alt: "видео мегамаркет",
+      },
+    ],
   },
   {
-    title: "tate",
-    category: "campaign key visual",
-    year: "2024",
-    image: "/media/images/tate.png",
-    type: "image",
+    id: 2,
+    slug: "fond-svet-v-rukah",
+    title: "фонд свет в руках",
+    selectionSrc: "/media/images/selected_svet-v-rukah.svg",
+    subtitle: "кампания для социальных сетей",
+    description: [
+        "разработала коммуникационную кампанию для благотворительного фонда, направленную на повышение узнаваемости и вовлеченности аудитории в социальных сетях.",
+        "создала единую визуальную систему, контент для социальных сетей и коммуникационные материалы, которые помогли увеличить охват и усилить присутствие фонда в цифровой среде.",
+    ],
+    role: "коммуникационный дизайн, визуальная система, контент для социальных сетей",
+    tools: "figma, photoshop, illustrator, veo, chat gpt, nano banana",
+    results: [
+      "охват кампании составил 708 990 пользователей за 2 месяца",
+      "vk — 398 272",
+      "instagram — 252 008",
+      "telegram — 58 710",
+      "общий охват вырос более чем в 7 раз по сравнению с предыдущими публикациями фонда",
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/media/images/work_pic_4.png",
+        alt: "посты свет в руках",
+      },
+    ],
+    video: [
+      {
+        id: 1,
+        src: "",
+        alt: "",
+      },
+    ],
   },
   {
-    title: "купер бизнес",
-    category: "smm campaign key visual",
-    year: "2026",
-    image: "/media/images/citydrive.png",
-    type: "image",
+    id: 3,
+    slug: "frutinanya",
+    title: "фрутоняня",
+    selectionSrc: "/media/images/selected_frutonanya.svg",
+    subtitle: "карточки товаров для маркетплейсов",
+    description: [
+        "руководила производством 524 анимированных карточек товаров для маркетплейсов.",
+        "проект требовал координации большого количества материалов, выстраивания процессов и постоянного взаимодействия между всеми участниками. организовала систему контроля производства и обеспечила выпуск всех материалов в срок.",
+    ],
+    role: "управление проектом, арт-дирекшн, организация производства, контроль качества",
+    tools: "figma, after effects, photoshop, google sheets",
+    results: [
+      "выпущено 524 анимированные карточки товаров",
+      "выстроен прозрачный производственный процесс",
+      "организована работа с ассортиментом более 100 sku",
+      "все материалы подготовлены к запуску в течение 10 месяцев",
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/media/images/work_pic_5.png",
+        alt: "карточки фрутоняня",
+      },
+    ],
+    video: [
+      {
+        id: 1,
+        src: "",
+        alt: "",
+      },
+    ],
   },
   {
-    title: "самокат",
-    category: "playable ads",
-    year: "2025",
-    image: "/media/video/samokat.mp4",
-    type: "video",
+    id: 4,
+    slug: "sberegaem smeste",
+    title: "сберегаем вместе",
+    selectionSrc: "/media/images/selected_sberegaem-vmeste.svg",
+    subtitle: "кампания ко дню святого валентина",
+    description: [
+        "разработала digital-кампанию ко дню святого валентина для спецпроекта о любви и отношениях.",
+        "создала концепцию, систему иллюстраций и ключевой визуальный стиль, вдохновленный символами наскальной живописи. адаптировала кампанию под разные цифровые форматы.",
+    ],
+    role: "разработка концепции, иллюстрация, key visual, адаптации",
+    tools: "illustrator, figma",
+    results: [
+      "разработаны две концепции кампании",
+      "создана система иллюстраций на основе символов",
+      "подготовлен полный комплект digital-адаптаций",
+      "материалы успешно использованы при запуске кампании",
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/media/images/work_pic_6.png",
+        alt: "макет сберегаем вместе",
+      },
+    ],
+    video: [
+      {
+        id: 1,
+        src: "",
+        alt: "",
+      },
+    ],
   },
   {
-    title: "мясной дом бородина",
-    category: "campaign key visual",
-    year: "2026",
-    image: "/media/image/mdb.png",
-    type: "image",
-  },
-  {
-    title: "гигачат",
-    category: "ai campaing",
-    year: "2024",
-    image: "/media/images/tate.png",
-    type: "image",
-  },
-  {
-    title: "roasteria",
-    category: "3d concept",
-    year: "2025",
-    image: "/media/images/roasteria.png",
-    type: "image",
-  },
-  {
-    title: "brand ice",
-    category: "ai tv integration",
-    year: "2023",
-    image: "/media/images/brand_ice.png",
-    type: "image",
-  },
-  {
+    id: 5,
+    slug: "citydrive",
     title: "ситидрайв",
-    category: "digital campaign",
-    year: "2024",
-    image: "/media/images/citydrive.png",
-    type: "image",
-  },
-  {
-    title: "самокат",
-    category: "illustration",
-    year: "2025",
-    image: "/media/images/samokat.png",
-    type: "image",
-  },
-  {
-    title: "плати частями от сбера",
-    category: "campaign key visual",
-    year: "2025",
-    image: "/media/images/plati_chastyami.png",
-    type: "image",
-  },
-  {
-    title: "волость",
-    category: "sticker pack illustrations",
-    year: "2023",
-    image: "/media/images/volost.png",
-    type: "image",
+    selectionSrc: "/media/images/selected_citydrive.svg",
+    subtitle: "кампания «первые поездки»",
+    description: [
+        "разработала концепцию рекламной кампании с motion-графикой для продвижения скидки 100% на первые три поездки.",
+        "идея строилась вокруг того, что бесплатные поездки открывают путь к новым впечатлениям и эмоциям. разработала key visual, motion-дизайн и анимационные материалы для digital-размещений.",
+    ],
+    role: "разработка концепции, арт-дирекшн, motion-дизайн, key visual",
+    tools: "after effects, photoshop, nano banana",
+    results: [
+      "создана масштабируемая концепция рекламной кампании",
+      "разработаны motion-материалы для разных форматов",
+      "подготовлена полноценная визуальная система для запуска кампании",
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/media/images/work_pic_7.png",
+        alt: "цвета ситидрайв",
+      },
+      {
+        id: 1,
+        src: "/media/images/work_pic_8.png",
+        alt: "иконки ситидрайв",
+      },
+    ],
+    video: [
+      {
+        id: 1,
+        src: "/media/videos/megamarket.mp4",
+        alt: "видео ситидрайв",
+      },
+    ],
   },
 ];
