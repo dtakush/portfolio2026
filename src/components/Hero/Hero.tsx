@@ -4,13 +4,13 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <nav className={styles.hero__menu} aria-label="Основная навигация">
-        <a className={styles.hero__menuLink} href="">
+        <a className={styles.hero__menuLink} href="#works">
           работы
         </a>
-        <a className={styles.hero__menuLink} href="">
+        <a className={styles.hero__menuLink} href="#about">
           обо мне
         </a>
-        <a className={styles.hero__menuLink} href="">
+        <a className={styles.hero__menuLink} href="#contact">
           контакты
         </a>
       </nav>
