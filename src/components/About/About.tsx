@@ -30,7 +30,7 @@ function About() {
         <div className={styles.about__description}>
           <img
             className={styles.about__arrow}
-            src="/media/images/arrow.svg"
+            src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
             alt="arrow"
             aria-hidden="true"
           />

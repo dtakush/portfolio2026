@@ -40,7 +40,7 @@ function Education() {
       <div className={styles.education__ending}>
         <img
           className={styles.education__levelEnd}
-          src="/media/images/level_end.svg"
+          src={`${import.meta.env.BASE_URL}media/images/level_end.svg`}
           alt=""
           aria-hidden="true"
         />

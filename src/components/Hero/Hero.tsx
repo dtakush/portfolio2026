@@ -17,13 +17,13 @@ function Hero() {
 
       <img
         className={styles.hero__portrait}
-        src="/media/images/photo.png"
+        src={`${import.meta.env.BASE_URL}media/images/photo.png`}
         alt="Портрет Дарьи Такуш"
       />
 
       <img
         className={styles.hero__greeting}
-        src="/media/images/privet.png"
+        src={`${import.meta.env.BASE_URL}media/images/privet.png`}
         alt="Привет!"
       />
 

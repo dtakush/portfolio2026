@@ -35,7 +35,7 @@ function Experience() {
         </h2>
         <img
           className={styles.experience__decoration}
-          src="/media/images/still_here.svg"
+          src={`${import.meta.env.BASE_URL}media/images/still_here.svg`}
           alt=""
           aria-hidden="true"
         />
@@ -75,7 +75,7 @@ function Experience() {
                   </span>
                   <img
                     className={styles.experience__chevron}
-                    src="/media/images/arrow_description.svg"
+                    src={`${import.meta.env.BASE_URL}media/images/arrow_description.svg`}
                     alt=""
                     aria-hidden="true"
                   />

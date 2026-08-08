@@ -109,19 +109,19 @@ function Works({ onShowGallery }: WorksProps) {
             <>
               <img
                 className={`${styles.works__decoration} ${styles["works__decoration--plusFirst"]}`}
-                src="/media/images/plus.svg"
+                src={`${import.meta.env.BASE_URL}media/images/plus.svg`}
                 alt=""
                 aria-hidden="true"
               />
               <img
                 className={`${styles.works__decoration} ${styles["works__decoration--plusSecond"]}`}
-                src="/media/images/plus.svg"
+                src={`${import.meta.env.BASE_URL}media/images/plus.svg`}
                 alt=""
                 aria-hidden="true"
               />
               <img
                 className={`${styles.works__decoration} ${styles["works__decoration--arrow"]}`}
-                src="/media/images/arrow.svg"
+                src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
                 alt=""
                 aria-hidden="true"
               />
@@ -132,13 +132,13 @@ function Works({ onShowGallery }: WorksProps) {
             <>
               <img
                 className={`${styles.works__decoration} ${styles["works__decoration--cityPlus"]}`}
-                src="/media/images/plus.svg"
+                src={`${import.meta.env.BASE_URL}media/images/plus.svg`}
                 alt=""
                 aria-hidden="true"
               />
               <img
                 className={`${styles.works__decoration} ${styles["works__decoration--cityArrow"]}`}
-                src="/media/images/arrow.svg"
+                src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
                 alt=""
                 aria-hidden="true"
               />

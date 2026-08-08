@@ -29,7 +29,7 @@ export const works: Work[] = [
     id: 1,
     slug: "megamarket",
     title: "мегамаркет",
-    selectionSrc: "/media/images/selected_megamarket.svg",
+    selectionSrc: `${import.meta.env.BASE_URL}media/images/selected_megamarket.svg`,
     subtitle: "новогодняя кампания для мегамаркета",
     description: [
       "разработала визуальную концепцию и наполнение предновогодней рекламной кампании, посвященной ассортименту мегамаркета. продуктовые ролики были созданы с помощью nano banana и kling, после чего я собрала финальный ролик в after effects, добавила анимацию, подобрала музыку и подготовила адаптации для разных форматов.",
@@ -44,24 +44,24 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: "/media/images/work_pic_1.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_1.png`,
         alt: "чашка чая для рекламной кампании Мегамаркета",
       },
       {
         id: 2,
-        src: "/media/images/work_pic_2.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_2.png`,
         alt: "подарочная коробка для рекламной кампании Мегамаркета",
       },
       {
         id: 3,
-        src: "/media/images/work_pic_3.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_3.png`,
         alt: "салат для рекламной кампании Мегамаркета",
       },
     ],
     video: [
       {
         id: 1,
-        src: "/media/videos/megamarket.mp4",
+        src: `${import.meta.env.BASE_URL}media/videos/megamarket.mp4`,
         alt: "видео мегамаркет",
       },
     ],
@@ -70,7 +70,7 @@ export const works: Work[] = [
     id: 2,
     slug: "fond-svet-v-rukah",
     title: "фонд свет в руках",
-    selectionSrc: "/media/images/selected_svet-v-rukah.svg",
+    selectionSrc: `${import.meta.env.BASE_URL}media/images/selected_svet-v-rukah.svg`,
     subtitle: "кампания для социальных сетей",
     description: [
         "разработала коммуникационную кампанию для благотворительного фонда, направленную на повышение узнаваемости и вовлеченности аудитории в социальных сетях.",
@@ -88,7 +88,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: "/media/images/work_pic_4.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_4.png`,
         alt: "посты свет в руках",
       },
     ],
@@ -104,7 +104,7 @@ export const works: Work[] = [
     id: 3,
     slug: "frutinanya",
     title: "фрутоняня",
-    selectionSrc: "/media/images/selected_frutonanya.svg",
+    selectionSrc: `${import.meta.env.BASE_URL}media/images/selected_frutonanya.svg`,
     subtitle: "карточки товаров для маркетплейсов",
     description: [
         "руководила производством 524 анимированных карточек товаров для маркетплейсов.",
@@ -121,7 +121,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: "/media/images/work_pic_5.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_5.png`,
         alt: "карточки фрутоняня",
       },
     ],
@@ -137,7 +137,7 @@ export const works: Work[] = [
     id: 4,
     slug: "sberegaem smeste",
     title: "сберегаем вместе",
-    selectionSrc: "/media/images/selected_sberegaem-vmeste.svg",
+    selectionSrc: `${import.meta.env.BASE_URL}media/images/selected_sberegaem-vmeste.svg`,
     subtitle: "кампания ко дню святого валентина",
     description: [
         "разработала digital-кампанию ко дню святого валентина для спецпроекта о любви и отношениях.",
@@ -154,7 +154,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: "/media/images/work_pic_6.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_6.png`,
         alt: "макет сберегаем вместе",
       },
     ],
@@ -170,7 +170,7 @@ export const works: Work[] = [
     id: 5,
     slug: "citydrive",
     title: "ситидрайв",
-    selectionSrc: "/media/images/selected_citydrive.svg",
+    selectionSrc: `${import.meta.env.BASE_URL}media/images/selected_citydrive.svg`,
     subtitle: "кампания «первые поездки»",
     description: [
         "разработала концепцию рекламной кампании с motion-графикой для продвижения скидки 100% на первые три поездки.",
@@ -186,19 +186,19 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: "/media/images/work_pic_7.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_7.png`,
         alt: "цвета ситидрайв",
       },
       {
         id: 1,
-        src: "/media/images/work_pic_8.png",
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_8.png`,
         alt: "иконки ситидрайв",
       },
     ],
     video: [
       {
         id: 1,
-        src: "/media/videos/citydrive.mp4",
+        src: `${import.meta.env.BASE_URL}media/videos/citydrive.mp4`,
         alt: "видео ситидрайв",
       },
     ],
