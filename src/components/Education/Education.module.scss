@@ -1,0 +1,96 @@
+@use "../../styles/variables" as *;
+
+.education {
+  width: 100%;
+  max-width: 1280px;
+  padding-top: 200px;
+  color: $text-color;
+}
+
+.education__title {
+  margin-top: 78px;
+  font-size: $font-size-desc-header;
+  font-weight: $font-bold;
+  letter-spacing: $letter-spacing-header;
+  line-height: $line-heigth-header;
+}
+
+.education__title span {
+  display: block;
+}
+
+.education__list {
+  margin-top: 69px;
+}
+
+.education__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 69px 0;
+  border-bottom: 1px solid rgba($text-color, .2);
+  align-items: center;
+  column-gap: 80px;
+}
+
+.education__item:first-child {
+  padding-top: 0;
+}
+
+.education__item:last-child {
+  border-bottom: 0;
+}
+
+.education__ending {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.education__levelEnd {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 70%;
+  width: 421px;
+  height: 367px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.education__bottomLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $text-color;
+}
+
+.education__info {
+  min-width: 0;
+}
+
+.education__name,
+.education__period {
+  font-size: $font-size-desc-subheader;
+  line-height: $line-height-main;
+}
+
+.education__name {
+  font-weight: $font-bold;
+}
+
+.education__place {
+  margin-top: 7px;
+  font-size: $font-size-desc-main-text;
+  font-weight: $font-light;
+  line-height: $line-height-main;
+  opacity: .4;
+}
+
+.education__period {
+  min-width: 142px;
+  font-weight: $font-light;
+  text-align: right;
+  white-space: nowrap;
+}

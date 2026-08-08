@@ -62,6 +62,20 @@ export const worksSmall: Work[] = [
     },
     {
     id: 4,
+    title: "ситидрайв // key visual // 2025",
+    images: [
+            { id: 1,
+            src: "",
+            alt: "", }
+            ],
+    video: [
+            { id: 1,
+            src: "/media/videos/citydrive_gallery.mp4",
+            alt: "видео Ситидрайв", }
+        ],
+    },
+    {
+    id: 5,
     title: "brand ice // ai tv integration // 2023",
     images: [
             { id: 1,
@@ -75,7 +89,7 @@ export const worksSmall: Work[] = [
         ],
     },
     {
-    id: 5,
+    id: 6,
     title: "гагичат // ai campaign // 2024",
     images: [
             { id: 1,
@@ -89,7 +103,7 @@ export const worksSmall: Work[] = [
         ],
     },
     {
-    id: 6,
+    id: 7,
     title: "самокат // illustration // 2025",
     images: [
             { id: 1,
@@ -103,7 +117,7 @@ export const worksSmall: Work[] = [
         ],
     },
     {
-    id: 7,
+    id: 8,
     title: "ситидрайв // digital campaign // 2025",
     images: [
             { id: 1,
@@ -117,7 +131,7 @@ export const worksSmall: Work[] = [
         ],
     },
     {
-    id: 8,
+    id: 9,
     title: "мясной дом бородина // key visual // 2026",
     images: [
             { id: 1,

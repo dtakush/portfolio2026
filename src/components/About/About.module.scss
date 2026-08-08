@@ -1,0 +1,72 @@
+@use "../../styles/variables" as *;
+
+
+.about {
+  width: 100%;
+  max-width: 1280px;
+  color: $text-color;
+}
+
+.about__line {
+  width: 100%;
+  height: 1px;
+  background-color: $text-color;
+  margin: 200px 0 200px 0;
+}
+
+.about__title {
+  margin-top: 78px;
+  font-size: $font-size-desc-header;
+  font-weight: $font-bold;
+  letter-spacing: $letter-spacing-header;
+  line-height: $line-heigth-header;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 80px;
+  margin-top: 96px;
+  align-items: start;
+}
+
+.about__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about__fact {
+  width: fit-content;
+  padding: 13px 24px 12px;
+  border: 1px solid $text-color;
+  border-radius: 999px;
+  font-size: $font-size-desc-subheader;
+  font-weight: $font-bold;
+  line-height: $line-height-main;
+  white-space: nowrap;
+}
+
+.about__description {
+  position: relative;
+  font-size: $font-size-desc-main-text;
+  font-weight: $font-light;
+  line-height: 1.15;
+}
+
+.about__description p + p {
+  margin-top: 22px;
+}
+
+.about__arrow {
+  position: absolute;
+  bottom: calc(100% + 28px);
+  left: 25%;
+  width: 121px;
+  height: auto;
+  transform: translateX(-50%) rotate(-15deg);
+  pointer-events: none;
+}

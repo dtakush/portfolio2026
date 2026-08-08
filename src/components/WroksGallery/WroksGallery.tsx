@@ -74,7 +74,7 @@ function WroksGallery() {
       id="works-gallery"
       aria-labelledby="works-gallery-title"
     >
-      <div className={styles.gallery__heading}>
+      <div className={styles.gallery__heading} id="works-gallery-heading">
         <h2 className={styles.gallery__title} id="works-gallery-title">
           пасхалка
         </h2>

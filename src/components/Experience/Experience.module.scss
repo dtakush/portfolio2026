@@ -1,0 +1,156 @@
+@use "../../styles/variables" as *;
+
+.experience {
+  width: 100%;
+  max-width: 1280px;
+  color: $text-color;
+}
+
+.experience__heading {
+  position: relative;
+}
+
+.experience__title {
+  font-size: $font-size-desc-header;
+  font-weight: $font-bold;
+  letter-spacing: $letter-spacing-header;
+  line-height: $line-heigth-header;
+}
+
+.experience__decoration {
+  position: absolute;
+  top: -100px;
+  right: 58px;
+  width: 351px;
+  height: auto;
+  pointer-events: none;
+}
+
+.experience__list {
+  margin-top: 69px;
+}
+
+.experience__item {
+  overflow: hidden;
+}
+
+.experience__trigger {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  width: 100%;
+  padding: 69px 0;
+  border: 0;
+  align-items: center;
+  column-gap: 80px;
+  color: $text-color;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.experience__item:first-child .experience__trigger {
+  padding-top: 0;
+}
+
+.experience__role {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience__position,
+.experience__period {
+  font-size: $font-size-desc-subheader;
+  line-height: $line-height-main;
+}
+
+.experience__position {
+  font-weight: $font-bold;
+}
+
+.experience__company {
+  margin-top: 7px;
+  font-size: $font-size-desc-main-text;
+  font-weight: $font-light;
+  line-height: $line-height-main;
+  opacity: .4;
+}
+
+.experience__meta {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.experience__period {
+  min-width: 142px;
+  font-weight: $font-light;
+  white-space: nowrap;
+}
+
+.experience__chevron {
+  flex: none;
+  width: 65px;
+  height: 30px;
+  overflow: visible;
+  object-fit: contain;
+  transform: rotate(180deg);
+  transition: transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.experience__item--open .experience__chevron {
+  transform: rotate(0deg);
+}
+
+.experience__descriptionWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  border-bottom: 1px solid rgba($text-color, .2);
+  transition: grid-template-rows 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.experience__item:last-child .experience__descriptionWrapper {
+  border-bottom: 0;
+}
+
+.experience__bottomLine {
+  width: 100%;
+  height: 1px;
+  margin-top: 200px;
+  background-color: $text-color;
+}
+
+.experience__item--open .experience__descriptionWrapper {
+  grid-template-rows: 1fr;
+}
+
+.experience__descriptionMask {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.experience__description {
+  width: 760px;
+  margin: 0;
+  padding: 0 0 72px;
+  font-size: $font-size-desc-main-text;
+  font-weight: $font-light;
+  line-height: 1.15;
+  list-style: none;
+}
+
+.experience__description li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.experience__description li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+
+.experience__description li + li {
+  margin-top: 8px;
+}

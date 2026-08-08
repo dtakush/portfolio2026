@@ -16,20 +16,27 @@ export const education = [
   },
   {
     id: 2,
+    title: "преподаватель",
+    subtitle: "московский педагогический государственный университет (мпгу)",
+    period: "2013 — 2015",
+    type: "education"
+  },
+  {
+    id: 3,
     title: "коммерческий иллюстратор",
     subtitle: "яндекс практикум",
     period: "2023",
     type: "education"
   },
   {
-    id: 3,
+    id: 4,
     title: "3d-дизайнер",
     subtitle: "яндекс практикум",
     period: "2025",
     type: "education"
   },
   {
-    id: 2,
+    id: 5,
     title: "веб-разработчик",
     subtitle: "яндекс практикум",
     period: "2021",

@@ -125,13 +125,6 @@ function Works({ onShowGallery }: WorksProps) {
                 alt=""
                 aria-hidden="true"
               />
-              <button
-                className={styles.works__moreButton}
-                type="button"
-                aria-label="Больше работ"
-                aria-controls="works-gallery"
-                onClick={onShowGallery}
-              />
             </>
           )}
 
@@ -151,6 +144,14 @@ function Works({ onShowGallery }: WorksProps) {
               />
             </>
           )}
+
+          <button
+            className={styles.works__moreButton}
+            type="button"
+            aria-label="Больше работ"
+            aria-controls="works-gallery"
+            onClick={onShowGallery}
+          />
 
           {activeWork.video
             .filter((video) => video.src)

@@ -4,6 +4,11 @@ import Hero from "@/components/Hero/Hero";
 import Ticker from "@/components/Ticker/Ticker";
 import Works from "@/components/Works/Works";
 import WorksGallery from "@/components/WroksGallery/WroksGallery";
+import About from '@/components/About/About';
+import Experience from "@/components/Experience/Experience";
+import Education from "@/components/Education/Education";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
 
 
 function App() {
@@ -12,7 +17,7 @@ function App() {
   useEffect(() => {
     if (!isWorksGalleryVisible) return;
 
-    document.getElementById("works-gallery")?.scrollIntoView({
+    document.getElementById("works-gallery-heading")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -20,7 +25,7 @@ function App() {
 
   const showWorksGallery = () => {
     if (isWorksGalleryVisible) {
-      document.getElementById("works-gallery")?.scrollIntoView({
+      document.getElementById("works-gallery-heading")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -36,6 +41,11 @@ function App() {
       <Ticker />
       <Works onShowGallery={showWorksGallery} />
       {isWorksGalleryVisible && <WorksGallery />}
+      <About />
+      <Experience />
+      <Education />
+      <Contact />
+      <Footer />
 
     </>
   );
