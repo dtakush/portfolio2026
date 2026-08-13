@@ -4,7 +4,7 @@
   position: relative;
   left: 50%;
   width: 100vw;
-  margin-top: 200px;
+  margin-top: $section-gap-desktop;
   height: 51px;
   overflow: hidden;
   transform: translateX(-50%);
@@ -35,7 +35,7 @@
   gap: 43px;
   padding-right: 43px;
   color: $text-color;
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-bold;
   line-height: $line-height-main;
   white-space: nowrap;
@@ -50,5 +50,28 @@
 @keyframes ticker-scroll {
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .ticker {
+    margin-top: $section-gap-tablet;
+    height: clamp(38px, 4vw, 51px);
+  }
+
+  .ticker__item {
+    gap: clamp(18px, 2.6vw, 43px);
+    padding-right: clamp(18px, 2.6vw, 43px);
+    font-size: clamp(16px, 1.7vw, 24px);
+  }
+
+  .ticker__divider {
+    height: clamp(38px, 4vw, 51px);
+  }
+}
+
+@media (max-width: 767px) {
+  .ticker {
+    margin-top: $section-gap-mobile;
   }
 }

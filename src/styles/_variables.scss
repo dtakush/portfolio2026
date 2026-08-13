@@ -13,14 +13,23 @@ $mobile: 480px;
 $font-light: 300;
 $font-bold: 700;
 
-//Font size
-$font-size-desc-header: 290px;
-$font-size-desc-subheader: 24px;
-$font-size-desc-main-text: 16px;
+//Section spacing
+$section-gap-desktop: 160px;
+$section-gap-tablet: 120px;
+$section-gap-mobile: 72px;
 
-$font-size-mob-header: 100px;
-$font-size-mob-subheader: 18px;
-$font-size-mob-main-text: 14px;
+//Font size
+$font-size-desctop-header: 290px;
+$font-size-desctop-subheader: 24px;
+$font-size-desctop-main-text: 16px;
+
+$font-size-tablet-header: 200px;
+$font-size-tablet-subheader: 18px;
+$font-size-tablet-main-text: 14px;
+
+$font-size-mobile-header: 100px;
+$font-size-mobile-subheader: 18px;
+$font-size-mobile-main-text: 12px;
 
 //Line Height
 $line-heigth-header: .6;

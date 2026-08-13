@@ -11,48 +11,57 @@
   width: 100%;
   height: 1px;
   background-color: $text-color;
-  margin: 200px 0 200px 0;
+  margin: $section-gap-desktop 0 $section-gap-desktop 0;
+}
+
+.about__heading {
+  margin-top: 78px;
 }
 
 .about__title {
-  margin-top: 78px;
-  font-size: $font-size-desc-header;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  font-size: $font-size-desctop-header;
   font-weight: $font-bold;
   letter-spacing: $letter-spacing-header;
   line-height: $line-heigth-header;
 }
 
+.about__title span {
+  display: inline-block;
+}
+
 .about__content {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 80px;
-  margin-top: 96px;
-  align-items: start;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .about__facts {
   display: flex;
   flex-wrap: wrap;
   gap: 16px 12px;
-  margin: 0;
+  margin: 0 2vw 0 0;
   padding: 0;
   list-style: none;
 }
 
 .about__fact {
   width: fit-content;
-  padding: 13px 24px 12px;
+  padding: 1vw 2vw;
   border: 1px solid $text-color;
   border-radius: 999px;
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-bold;
   line-height: $line-height-main;
   white-space: nowrap;
 }
 
 .about__description {
-  position: relative;
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-weight: $font-light;
   line-height: 1.15;
 }
@@ -62,11 +71,51 @@
 }
 
 .about__arrow {
-  position: absolute;
-  bottom: calc(100% + 28px);
-  left: 25%;
+  display: block;
   width: 121px;
   height: auto;
-  transform: translateX(-50%) rotate(-15deg);
+  transform: rotate(-15deg);
   pointer-events: none;
+  flex-shrink: 0;
+  padding: 150px 0 0 0;
+}
+
+@media (max-width: 1280px) {
+  .about__title {
+    gap: 12px;
+    font-size: clamp(
+    $font-size-mobile-header,
+    20vw,
+    $font-size-desctop-header
+  );
+  }
+
+  .about__description {
+    font-size: clamp(
+    $font-size-mobile-main-text,
+    2vw,
+    $font-size-desctop-main-text
+  );
+  }
+
+  .about__arrow {
+    width: 90px;
+    padding: 100px 0 0 0;
+  }
+
+  .about__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .about__fact {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+  }
 }

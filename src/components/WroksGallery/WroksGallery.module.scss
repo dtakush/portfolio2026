@@ -15,14 +15,14 @@
 }
 
 .gallery__title {
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-bold;
   line-height: $line-height-main;
 }
 
 .gallery__subtitle {
   margin-top: 9px;
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-weight: $font-light;
   line-height: $line-height-main;
 }
@@ -47,7 +47,6 @@
   height: 720px;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   opacity: .2;
   transition: opacity 500ms ease;
 }
@@ -80,7 +79,7 @@
 }
 
 .gallery__caption p {
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-light;
   line-height: $line-height-main;
 }
@@ -121,4 +120,92 @@
 .gallery__arrow--next::before {
   right: 12px;
   transform: rotate(45deg);
+}
+
+@media (max-width: 1279px) {
+  .gallery {
+    left: 50%;
+    width: 100vw;
+    margin-top: $section-gap-tablet;
+    padding-top: clamp(120px, 14vw, 180px);
+    transform: translateX(-50%);
+  }
+
+  .gallery__heading {
+    width: 85%;
+    margin-inline: auto;
+  }
+
+  .gallery__title {
+    font-size: clamp(20px, 2vw, 32px);
+  }
+
+  .gallery__subtitle {
+    margin-top: clamp(8px, 1vw, 12px);
+    margin-bottom: clamp(12px, 4vw, 20px);
+    font-size: clamp(15px, 1.6vw, 20px);
+  }
+
+  .gallery__track {
+    gap: clamp(16px, 1.8vw, 28px);
+    width: max-content;
+  }
+
+  .gallery__slide {
+    display: flex;
+    flex: 0 0 auto;
+    width: auto;
+    height: clamp(500px, 25vw, 680px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery__media {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+
+  }
+
+  .gallery__controls {
+    width: min(100%, 700px);
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    margin-top: clamp(18px, 2vw, 24px);
+    column-gap: clamp(14px, 2vw, 28px);
+  }
+
+  .gallery__caption {
+    min-width: 0;
+  }
+
+  .gallery__caption p {
+    font-size: clamp(20px, 2vw, 30px);
+  }
+
+  .gallery__caption span {
+    margin-top: 10px;
+    font-size: clamp(12px, 1vw, 14px);
+  }
+
+  .gallery__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery__arrow::before {
+    top: 7px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .gallery__arrow--previous::before {
+    left: 9px;
+  }
+
+  .gallery__arrow--next::before {
+    right: 9px;
+  }
 }

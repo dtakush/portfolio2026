@@ -85,15 +85,25 @@ function Works({ onShowGallery }: WorksProps) {
               ))}
             </ul>
           </div>
+
+          <button
+            className={styles.works__moreButton}
+            type="button"
+            aria-label="Больше работ"
+            aria-controls="works-gallery"
+            onClick={onShowGallery}
+          />
         </div>
 
         <div
           className={`${styles.works__gallery} ${
-            activeWork.images.length === 1
-              ? styles["works__gallery--oneImage"]
-              : activeWork.images.length === 2
-                ? styles["works__gallery--twoImages"]
-                : ""
+            activeWork.slug === "citydrive"
+              ? styles["works__gallery--citydrive"]
+              : activeWork.images.length === 1
+                ? styles["works__gallery--oneImage"]
+                : activeWork.images.length === 2
+                  ? styles["works__gallery--twoImages"]
+                  : ""
           }`}
         >
           {activeWork.images.map((image) => (
@@ -144,14 +154,6 @@ function Works({ onShowGallery }: WorksProps) {
               />
             </>
           )}
-
-          <button
-            className={styles.works__moreButton}
-            type="button"
-            aria-label="Больше работ"
-            aria-controls="works-gallery"
-            onClick={onShowGallery}
-          />
 
           {activeWork.video
             .filter((video) => video.src)

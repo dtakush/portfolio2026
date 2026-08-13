@@ -32,7 +32,7 @@ export const worksSmall: Work[] = [
             alt: "", }
         ],
     },
-    {
+    /*{
     id: 2,
     title: "сбер // motion design // 2026",
     images: [
@@ -45,7 +45,7 @@ export const worksSmall: Work[] = [
             src: `${import.meta.env.BASE_URL}media/videos/sber.mp4`,
             alt: "видео Сбер", }
         ],
-    },
+    },*/
     {
     id: 3,
     title: "купер.бизнес // key visual // 2026",

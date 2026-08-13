@@ -5,12 +5,12 @@
   padding-top: 78px;
   color: $text-color;
   background-color: $bg-color;
-  margin-top: 200px;
+  margin-top: $section-gap-desktop;
 }
 
 .contact__title {
   margin: 0;
-  font-size: clamp(180px, 20vw, $font-size-desc-header);
+  font-size: clamp(180px, 20vw, $font-size-desctop-header);
   font-weight: $font-bold;
   letter-spacing: $letter-spacing-header;
   line-height: .62;
@@ -26,7 +26,7 @@
 
 .contact__lead {
   margin: 0;
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-bold;
   line-height: 1.05;
 }
@@ -37,7 +37,7 @@
   align-items: flex-start;
   gap: 10px;
   margin-top: 20px;
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-style: normal;
   font-weight: $font-light;
   line-height: 1.15;
@@ -53,3 +53,47 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+@media (max-width: 1280px) {
+  .contact {
+    margin-top: $section-gap-tablet;
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    margin-top: $section-gap-mobile;
+  }
+}
+
+  .contact__title {
+    font-size: clamp(
+      $font-size-mobile-header,
+      18vw,
+      $font-size-desctop-header
+    );
+  }
+
+  .contact__content {
+    margin-top: 40px;
+  }
+
+  .contact__lead {
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+  }
+
+  .contact__links {
+    gap: 8px;
+    margin-top: 16px;
+    font-size: clamp(
+      $font-size-mobile-main-text,
+      1.3vw,
+      $font-size-desctop-main-text
+    );
+  }
+

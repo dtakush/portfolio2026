@@ -3,13 +3,13 @@
 .education {
   width: 100%;
   max-width: 1280px;
-  padding-top: 200px;
+  padding-top: $section-gap-desktop;
   color: $text-color;
 }
 
 .education__title {
   margin-top: 78px;
-  font-size: $font-size-desc-header;
+  font-size: $font-size-desctop-header;
   font-weight: $font-bold;
   letter-spacing: $letter-spacing-header;
   line-height: $line-heigth-header;
@@ -72,7 +72,7 @@
 
 .education__name,
 .education__period {
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   line-height: $line-height-main;
 }
 
@@ -82,7 +82,7 @@
 
 .education__place {
   margin-top: 7px;
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-weight: $font-light;
   line-height: $line-height-main;
   opacity: .4;
@@ -93,4 +93,61 @@
   font-weight: $font-light;
   text-align: right;
   white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .education {
+    padding-top: $section-gap-tablet;
+  }
+
+  .education__title {
+    margin-top: 40px;
+    font-size: clamp(
+      $font-size-mobile-header,
+      18vw,
+      $font-size-desctop-header
+    );
+  }
+
+  .education__list {
+    margin-top: 42px;
+  }
+
+  .education__item {
+    padding: 42px 0;
+    column-gap: 48px;
+  }
+
+  .education__name,
+  .education__period {
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+  }
+
+  .education__place {
+    font-size: clamp(
+      $font-size-mobile-main-text,
+      1.3vw,
+      $font-size-desctop-main-text
+    );
+  }
+
+  .education__levelEnd {
+    left: 72%;
+    width: clamp(180px, 26vw, 421px);
+    height: auto;
+  }
+
+  .education__ending {
+    height: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  .education {
+    padding-top: $section-gap-mobile;
+  }
 }

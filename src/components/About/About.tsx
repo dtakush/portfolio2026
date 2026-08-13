@@ -14,9 +14,17 @@ function About() {
     <section className={styles.about} id="about" aria-labelledby="about-title">
       <div className={styles.about__line} aria-hidden="true" />
 
-      <h2 className={styles.about__title} id="about-title">
-        обо мне
-      </h2>
+      <div className={styles.about__heading}>
+        <h2 className={styles.about__title} id="about-title">
+          <span>обо мне</span>
+          <img
+            className={styles.about__arrow}
+            src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
+            alt="arrow"
+            aria-hidden="true"
+          />
+        </h2>
+      </div>
 
       <div className={styles.about__content}>
         <ul className={styles.about__facts} aria-label="Факты обо мне">
@@ -28,13 +36,6 @@ function About() {
         </ul>
 
         <div className={styles.about__description}>
-          <img
-            className={styles.about__arrow}
-            src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
-            alt="arrow"
-            aria-hidden="true"
-          />
-
           <p>
             {typography("больше 12 лет работаю с международными и российскими брендами, запускала рекламные кампании, выстраивала дизайн-системы и производственные процессы.")}
           </p>

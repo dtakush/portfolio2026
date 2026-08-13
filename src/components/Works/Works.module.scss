@@ -1,14 +1,15 @@
 @use "../../styles/variables" as *;
 
 .works {
-  width: 1280px;
-  padding-top: 280px;
+  width: 100%;
+  max-width: 1280px;
+  padding-top: $section-gap-desktop;
 }
 
 .works__title {
   margin: 0 0 99px;
   color: $text-color;
-  font-size: $font-size-desc-header;
+  font-size: $font-size-desctop-header;
   font-weight: $font-bold;
   letter-spacing: $letter-spacing-header;
   line-height: $line-heigth-header;
@@ -31,7 +32,7 @@
   color: $text-color;
   background: transparent;
   font: inherit;
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-bold;
   line-height: $line-height-main;
   opacity: .45;
@@ -67,14 +68,16 @@
 
 .works__project {
   display: grid;
-  grid-template-columns: 399px 840px;
+  grid-template-columns: minmax(0, 399px) minmax(0, 840px);
   column-gap: 41px;
 }
 
 .works__details {
-  width: 399px;
+  position: relative;
+  width: 100%;
+  max-width: 399px;
   color: $text-color;
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-weight: $font-light;
   line-height: $line-height-main;
 }
@@ -82,7 +85,7 @@
 .works__projectTitle,
 .works__meta dt,
 .works__results h4 {
-  font-size: $font-size-desc-main-text;
+  font-size: $font-size-desctop-main-text;
   font-weight: $font-bold;
   line-height: $line-height-main;
 }
@@ -118,10 +121,11 @@
 .works__gallery {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 246px);
-  width: 840px;
-  column-gap: 51px;
-  row-gap: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  max-width: 840px;
+  column-gap: clamp(20px, 3vw, 51px);
+  row-gap: clamp(20px, 3vw, 40px);
 }
 
 .works__image {
@@ -130,7 +134,18 @@
 }
 
 .works__gallery--oneImage {
-  grid-template-columns: minmax(0, 1fr);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  grid-template-columns: none;
+}
+
+.works__gallery--oneImage .works__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .works__gallery--twoImages {
@@ -138,9 +153,35 @@
   column-gap: 34px;
 }
 
+.works__gallery--citydrive {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  column-gap: clamp(16px, 2vw, 34px);
+  row-gap: clamp(16px, 2vw, 34px);
+}
+
+.works__gallery--citydrive .works__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.works__gallery--citydrive .works__video {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .works__video {
   grid-column: 1 / -1;
-  width: 840px;
+  width: 100%;
+  max-width: 840px;
   height: auto;
 }
 
@@ -166,8 +207,8 @@
 }
 
 .works__decoration--cityPlus {
-  top: 125px;
-  left: 452px;
+  top: 60px;
+  left: 258px;
 }
 
 .works__decoration--cityArrow {
@@ -178,12 +219,173 @@
 .works__moreButton {
   position: absolute;
   z-index: 1;
-  top: 500px;
-  left: -415px;
+  top: 75%;
+  left: 0;
   width: 311px;
   height: 231px;
   padding: 0;
   border: 0;
+  transform: translateY(24px);
   background: transparent url("/portfolio2026/media/images/click.svg") center / contain no-repeat;
   cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .works {
+    padding-top: $section-gap-tablet;
+  }
+
+  .works__title {
+    margin-bottom: 60px;
+    font-size: clamp(
+      $font-size-mobile-header,
+      18vw,
+      $font-size-desctop-header
+    );
+  }
+
+  .works__tab {
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+  }
+
+  .works__details,
+  .works__projectTitle,
+  .works__meta dt,
+  .works__results h4 {
+    font-size: clamp(
+      $font-size-mobile-main-text,
+      1.3vw,
+      $font-size-desctop-main-text
+    );
+  }
+
+  .works__project {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    column-gap: clamp(20px, 3vw, 41px);
+  }
+
+  .works__gallery {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(16px, 2vw, 51px);
+    row-gap: clamp(18px, 2vw, 40px);
+  }
+
+  .works__gallery--oneImage {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    grid-template-columns: none;
+  }
+
+  .works__gallery--oneImage .works__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .works__gallery--citydrive {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    column-gap: clamp(16px, 2vw, 34px);
+    row-gap: clamp(16px, 2vw, 34px);
+  }
+
+  .works__gallery--citydrive .works__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .works__gallery--citydrive .works__video {
+    grid-column: 1 / -1;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .works__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .works__video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .works__decoration {
+    width: clamp(36px, 4vw, 80px);
+    height: auto;
+  }
+
+  .works__decoration--plusFirst {
+    top: 14%;
+    left: 29%;
+  }
+
+  .works__decoration--plusSecond {
+    top: 14%;
+    left: 64%;
+  }
+
+  .works__decoration--arrow {
+    top: 27%;
+    right: 1%;
+    left: auto;
+    width: clamp(60px, 6.7vw, 113px);
+  }
+
+  .works__decoration--cityPlus {
+    top: 14%;
+    left: 29%;
+  }
+
+  .works__decoration--cityArrow {
+    top: 27%;
+    right: 1%;
+    left: auto;
+    width: clamp(60px, 6.7vw, 113px);
+  }
+
+  .works__decoration--plusFirst,
+  .works__decoration--plusSecond,
+  .works__decoration--cityPlus {
+    transform: scale(.4);
+    transform-origin: center;
+  }
+
+  .works__decoration--arrow,
+  .works__decoration--cityArrow {
+    transform: scale(.8);
+    transform-origin: center;
+  }
+
+  .works__moreButton {
+    width: clamp(180px, 24vw, 311px);
+    height: auto;
+    aspect-ratio: 311 / 231;
+  }
+}
+
+@media (max-width: 767px) {
+  .works {
+    padding-top: $section-gap-mobile;
+  }
 }

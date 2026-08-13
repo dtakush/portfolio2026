@@ -2,7 +2,7 @@
 
 .footer {
   width: 100%;
-  margin-top: 200px;
+  margin-top: $section-gap-desktop;
   color: $text-color;
 }
 
@@ -14,7 +14,28 @@
 
 .footer__copyright {
   padding: 45px 0;
-  font-size: $font-size-desc-subheader;
+  font-size: $font-size-desctop-subheader;
   font-weight: $font-light;
   line-height: $line-height-main;
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    margin-top: $section-gap-tablet;
+  }
+
+  .footer__copyright {
+    padding: 28px 0;
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    margin-top: $section-gap-mobile;
+  }
 }
