@@ -75,9 +75,10 @@
   line-height: $line-height-main;
 }
 
-@media (max-width: 1279px) and (min-width: 768px) {
+@media (max-width: 1440px) and (min-width: 768px) {
   .hero {
     width: 100%;
+    max-width: 1440px;
     height: clamp(470px, 50vw, 680px);
     margin-inline: auto;
   }
@@ -110,7 +111,11 @@
   }
 
   .hero__title {
-    font-size: clamp($font-size-tablet-header, 16vw, $font-size-desctop-header);
+    font-size: clamp(
+      $font-size-mobile-header,
+      18vw,
+      $font-size-desctop-header
+    );
     letter-spacing: clamp(-0.07em, -0.085em, -0.085em);
   }
 
