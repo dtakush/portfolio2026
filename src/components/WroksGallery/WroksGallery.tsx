@@ -6,6 +6,7 @@ import {
   type CSSProperties,
 } from "react";
 import { worksSmall } from "@/data/works-gallery";
+import { typography } from "@/utils/typography";
 import styles from "./WroksGallery.module.scss";
 
 const formatSlideNumber = (number: number) => String(number).padStart(2, "0");
@@ -76,10 +77,10 @@ function WroksGallery() {
     >
       <div className={styles.gallery__heading} id="works-gallery-heading">
         <h2 className={styles.gallery__title} id="works-gallery-title">
-          пасхалка
+          {typography("пасхалка")}
         </h2>
         <p className={styles.gallery__subtitle}>
-          ещё немного работ. потому что остановиться было сложно
+          {typography("ещё немного работ. потому что остановиться было сложно")}
         </p>
       </div>
 
@@ -143,9 +144,9 @@ function WroksGallery() {
         />
 
         <div className={styles.gallery__caption}>
-          <p>{activeWork.title}</p>
+          <p>{typography(activeWork.title)}</p>
           <span>
-            {formatSlideNumber(activeIndex + 1)} / {formatSlideNumber(worksSmall.length)}
+            {typography(`${formatSlideNumber(activeIndex + 1)} / ${formatSlideNumber(worksSmall.length)}`)}
           </span>
         </div>
 

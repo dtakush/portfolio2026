@@ -1,3 +1,4 @@
+import { typography } from "@/utils/typography";
 import styles from "./Hero.module.scss";
 
 function Hero() {
@@ -5,13 +6,13 @@ function Hero() {
     <section className={styles.hero}>
       <nav className={styles.hero__menu} aria-label="Основная навигация">
         <a className={styles.hero__menuLink} href="#works">
-          работы
+          {typography("работы")}
         </a>
         <a className={styles.hero__menuLink} href="#about">
-          обо мне
+          {typography("обо мне")}
         </a>
         <a className={styles.hero__menuLink} href="#contact">
-          контакты
+          {typography("контакты")}
         </a>
       </nav>
 
@@ -29,14 +30,12 @@ function Hero() {
 
       <div className={styles.hero__content}>
         <h1 className={styles.hero__title}>
-          <span>дарья</span>
-          <span>такуш</span>
+          <span>{typography("дарья")}</span>
+          <span>{typography("такуш")}</span>
         </h1>
 
         <p className={styles.hero__description}>
-          создаю рекламные<br />
-          кампании и автоматизирую<br />
-          дизайн с ai
+          {typography("создаю рекламные кампании и автоматизирую дизайн с ai")}
         </p>
       </div>
     </section>

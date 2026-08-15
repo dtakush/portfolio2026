@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { experience } from "@/data/experience";
-import { typography } from "../../../utils/typography";
+import { typography } from "@/utils/typography";
 import styles from "./Experience.module.scss";
 
 function Experience() {
@@ -31,7 +31,7 @@ function Experience() {
 
       <div className={styles.experience__heading}>
         <h2 className={styles.experience__title} id="experience-title">
-          опыт
+          {typography("опыт")}
         </h2>
         <img
           className={styles.experience__decoration}
@@ -62,16 +62,16 @@ function Experience() {
               >
                 <span className={styles.experience__role}>
                   <span className={styles.experience__position}>
-                    {item.position}
+                    {typography(item.position)}
                   </span>
                   <span className={styles.experience__company}>
-                    {item.company}
+                    {typography(item.company)}
                   </span>
                 </span>
 
                 <span className={styles.experience__meta}>
                   <span className={styles.experience__period}>
-                    {item.period}
+                    {typography(item.period)}
                   </span>
                   <img
                     className={styles.experience__chevron}

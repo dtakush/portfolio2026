@@ -1,4 +1,5 @@
 import { ticker } from "../../data/ticker";
+import { typography } from "@/utils/typography";
 import styles from "./Ticker.module.scss";
 
 function Ticker() {
@@ -14,7 +15,7 @@ function Ticker() {
             {ticker.flatMap((item) =>
               item.description.map((word) => (
                 <div className={styles.ticker__item} key={`${item.id}-${word}`}>
-                  <span>{word}</span>
+                  <span>{typography(word)}</span>
                   <span className={styles.ticker__divider} aria-hidden="true" />
                 </div>
               )),

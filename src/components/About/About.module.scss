@@ -11,6 +11,7 @@
   width: 100%;
   height: 1px;
   background-color: $text-color;
+
   margin: $section-gap-desktop 0 $section-gap-desktop 0;
 }
 
@@ -80,22 +81,26 @@
   padding: 150px 0 0 0;
 }
 
+.about__arrowMobile {
+  display: none;
+}
+
 @media (max-width: 1440px) {
   .about__title {
     gap: 12px;
     font-size: clamp(
-    $font-size-mobile-header,
-    20vw,
-    $font-size-desctop-header
-  );
+      $font-size-mobile-header,
+      20vw,
+      $font-size-desctop-header
+    );
   }
 
   .about__description {
     font-size: clamp(
-    $font-size-mobile-main-text,
-    2vw,
-    $font-size-desctop-main-text
-  );
+      $font-size-mobile-main-text,
+      1vw,
+      $font-size-desctop-main-text
+    );
   }
 
   .about__arrow {
@@ -114,8 +119,101 @@
     white-space: nowrap;
     font-size: clamp(
       $font-size-mobile-subheader,
-      2vw,
+      1vw,
       $font-size-desctop-subheader
     );
+  }
+}
+
+@media (max-width: 879px) {
+  .about {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+  }
+
+  .about__heading,
+  .about__title,
+  .about__content {
+    display: contents;
+  }
+
+  .about__line:first-child {
+    order: 0;
+    margin: 0 0 100px;
+  }
+
+  .about__title span {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    font-size:  clamp(
+      $font-size-mobile-header,
+      20vw,
+      $font-size-tablet-header
+    );;
+    overflow-wrap: anywhere;
+  }
+
+  .about__description {
+    position: relative;
+    order: 2;
+    width: 100%;
+    margin-top: 30px;
+    font-size:  clamp(
+      $font-size-mobile-main-text,
+      1vw,
+      $font-size-tablet-main-text
+    );;
+    line-height: $line-height-main;
+  }
+
+  .about__description p + p {
+    margin-top: 10px;
+  }
+
+  .about__facts {
+    display: flex;
+    order: 3;
+    width: 100%;
+    margin: 30px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .about__fact {
+    width: fit-content;
+    max-width: 100%;
+    padding: 15px;
+    flex: 0 1 auto;
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      1vw,
+      $font-size-tablet-subheader
+    );;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .about__arrowDesktop {
+    display: none;
+  }
+
+  .about__arrowMobile {
+    display: block;
+    position: absolute;
+    top: calc(100% - 3px);
+    left: clamp(180px, 70%, 3000px);
+    width: clamp(68px, calc(57.6px + 3.69vw), 90px);
+    margin: 0;
+    padding: 0;
+    transform: rotate(32deg);
+  }
+
+  .about__line:last-child {
+    order: 5;
+    margin: 30px 0 0;
   }
 }

@@ -8,3 +8,13 @@ body {
     color: $text-color;
     background-color: $bg-color;
 }
+
+@media (max-width: 879px) {
+    #root {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        gap: 100px;
+    }
+}

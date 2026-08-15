@@ -75,3 +75,36 @@
     margin-top: $section-gap-mobile;
   }
 }
+
+@media (max-width: 879px) {
+  .ticker {
+    width: 100vw;
+    max-width: 100vw;
+    height: clamp(32px, 4.33vw, 38px);
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .ticker__track {
+    height: 100%;
+  }
+
+  .ticker__group {
+    height: 100%;
+  }
+
+  .ticker__item {
+    gap: clamp(14px, 2.6vw, 23px);
+    padding-right: clamp(14px, 2.6vw, 23px);
+    font-size: clamp(
+      $font-size-mobile-subheader,
+      2vw,
+      $font-size-desctop-subheader
+    );
+    white-space: nowrap;
+  }
+
+  .ticker__divider {
+    height: clamp(32px, 4.33vw, 38px);
+  }
+}

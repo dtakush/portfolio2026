@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { works } from "@/data/works";
+import { typography } from "@/utils/typography";
 import styles from "./Works.module.scss";
-import { typography } from "../../../utils/typography";
 
 interface WorksProps {
   onShowGallery: () => void;
@@ -14,7 +14,7 @@ function Works({ onShowGallery }: WorksProps) {
   return (
     <section className={styles.works} id="works" aria-labelledby="works-title">
       <h2 className={styles.works__title} id="works-title">
-        работы
+        {typography("работы")}
       </h2>
 
       <div className={styles.works__tabs} role="tablist" aria-label="Проекты">
@@ -35,7 +35,7 @@ function Works({ onShowGallery }: WorksProps) {
               onClick={() => setActiveSlug(work.slug)}
             >
               <span className={styles.works__tabLabel}>
-                {work.title}
+                {typography(work.title)}
 
                 {isActive && (
                   <img
@@ -58,7 +58,9 @@ function Works({ onShowGallery }: WorksProps) {
         aria-labelledby={`${activeWork.slug}-tab`}
       >
         <div className={styles.works__details}>
-          <h3 className={styles.works__projectTitle}>{activeWork.subtitle}</h3>
+          <h3 className={styles.works__projectTitle}>
+            {typography(activeWork.subtitle)}
+          </h3>
 
           <div className={styles.works__description}>
             {activeWork.description.map((paragraph) => (
@@ -68,20 +70,20 @@ function Works({ onShowGallery }: WorksProps) {
 
           <dl className={styles.works__meta}>
             <div className={styles.works__metaItem}>
-              <dt>роль</dt>
+              <dt>{typography("роль")}</dt>
               <dd>{typography(activeWork.role)}</dd>
             </div>
             <div className={styles.works__metaItem}>
-              <dt>инструменты</dt>
+              <dt>{typography("инструменты")}</dt>
               <dd>{typography(activeWork.tools)}</dd>
             </div>
           </dl>
 
-          <div className={typography(styles.works__results)}>
-            <h4>результат</h4>
+          <div className={styles.works__results}>
+            <h4>{typography("результат")}</h4>
             <ul>
               {activeWork.results.map((result) => (
-                <li key={result}>{result}</li>
+                <li key={result}>{typography(result)}</li>
               ))}
             </ul>
           </div>

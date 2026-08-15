@@ -1,17 +1,18 @@
+import { typography } from "@/utils/typography";
 import styles from "./Header.module.scss";
 
 function Header() {
   return (
     <header className={styles.header}>
       <a className={styles.logo} href="/">
-        портфолио
+        {typography("портфолио")}
       </a>
 
       <nav className={styles.nav}>
-        <a href="#works">работы</a>
-        <a href="#about">обо мне</a>
-        <a href="#experience">опыт</a>
-        <a href="#education">образование</a>
+        <a href="#works">{typography("работы")}</a>
+        <a href="#about">{typography("обо мне")}</a>
+        <a href="#experience">{typography("опыт")}</a>
+        <a href="#education">{typography("образование")}</a>
       </nav>
 
     </header>

@@ -1,5 +1,5 @@
 import { education } from "@/data/education";
-import { typography } from "../../../utils/typography";
+import { typography } from "@/utils/typography";
 import styles from "./Education.module.scss";
 
 function Education() {
@@ -11,8 +11,8 @@ function Education() {
     >
 
       <h2 className={styles.education__title} id="education-title">
-        <span>образо</span>
-        <span>вание</span>
+        <span>{typography("образо")}</span>
+        <span>{typography("вание")}</span>
       </h2>
 
       <div className={styles.education__list}>

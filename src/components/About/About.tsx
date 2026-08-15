@@ -1,5 +1,5 @@
 import styles from "./About.module.scss";
-import { typography } from "../../../utils/typography";
+import { typography } from "@/utils/typography";
 
 const facts = [
   "12+ лет в дизайне",
@@ -16,9 +16,9 @@ function About() {
 
       <div className={styles.about__heading}>
         <h2 className={styles.about__title} id="about-title">
-          <span>обо мне</span>
+          <span>{typography("обо мне")}</span>
           <img
-            className={styles.about__arrow}
+            className={`${styles.about__arrow} ${styles.about__arrowDesktop}`}
             src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
             alt="arrow"
             aria-hidden="true"
@@ -30,7 +30,7 @@ function About() {
         <ul className={styles.about__facts} aria-label="Факты обо мне">
           {facts.map((fact) => (
             <li className={styles.about__fact} key={fact}>
-              {fact}
+              {typography(fact)}
             </li>
           ))}
         </ul>
@@ -43,6 +43,12 @@ function About() {
           <p>
             {typography("люблю создавать не только красивый дизайн, но и понятные системы, которые помогают команде работать быстрее и эффективнее.")}
           </p>
+          <img
+            className={`${styles.about__arrow} ${styles.about__arrowMobile}`}
+            src={`${import.meta.env.BASE_URL}media/images/arrow.svg`}
+            alt=""
+            aria-hidden="true"
+          />
         </div>
       </div>
 
