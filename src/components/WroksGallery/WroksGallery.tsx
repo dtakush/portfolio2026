@@ -11,8 +11,23 @@ import styles from "./WroksGallery.module.scss";
 
 const formatSlideNumber = (number: number) => String(number).padStart(2, "0");
 
+const getCircularDistance = (first: number, second: number, total: number) => {
+  const directDistance = Math.abs(first - second);
+
+  return Math.min(directDistance, total - directDistance);
+};
+
+const getNearbySlideIndexes = (activeIndex: number, total: number) => [
+  (activeIndex - 1 + total) % total,
+  activeIndex,
+  (activeIndex + 1) % total,
+];
+
 function WroksGallery() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [{ activeIndex, loadedSlideIndexes }, setGalleryState] = useState(() => ({
+    activeIndex: 0,
+    loadedSlideIndexes: new Set(getNearbySlideIndexes(0, worksSmall.length)),
+  }));
   const [trackOffset, setTrackOffset] = useState(0);
   const viewportRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLElement | null)[]>([]);
@@ -54,15 +69,41 @@ function WroksGallery() {
   }, [activeIndex]);
 
   const showPrevious = () => {
-    setActiveIndex((current) =>
-      current === 0 ? worksSmall.length - 1 : current - 1,
-    );
+    setGalleryState((currentState) => {
+      const nextActiveIndex =
+        currentState.activeIndex === 0
+          ? worksSmall.length - 1
+          : currentState.activeIndex - 1;
+      const nextLoadedSlideIndexes = new Set(currentState.loadedSlideIndexes);
+
+      getNearbySlideIndexes(nextActiveIndex, worksSmall.length).forEach((index) => {
+        nextLoadedSlideIndexes.add(index);
+      });
+
+      return {
+        activeIndex: nextActiveIndex,
+        loadedSlideIndexes: nextLoadedSlideIndexes,
+      };
+    });
   };
 
   const showNext = () => {
-    setActiveIndex((current) =>
-      current === worksSmall.length - 1 ? 0 : current + 1,
-    );
+    setGalleryState((currentState) => {
+      const nextActiveIndex =
+        currentState.activeIndex === worksSmall.length - 1
+          ? 0
+          : currentState.activeIndex + 1;
+      const nextLoadedSlideIndexes = new Set(currentState.loadedSlideIndexes);
+
+      getNearbySlideIndexes(nextActiveIndex, worksSmall.length).forEach((index) => {
+        nextLoadedSlideIndexes.add(index);
+      });
+
+      return {
+        activeIndex: nextActiveIndex,
+        loadedSlideIndexes: nextLoadedSlideIndexes,
+      };
+    });
   };
 
   const trackStyle = {
@@ -90,50 +131,59 @@ function WroksGallery() {
         aria-live="polite"
       >
         <div className={styles.gallery__track} style={trackStyle}>
-          {worksSmall.map((work, index) => (
-            <article
-              className={`${styles.gallery__slide} ${
-                index === activeIndex ? styles["gallery__slide--active"] : ""
-              }`}
-              key={work.id}
-              ref={(slide) => {
-                slideRefs.current[index] = slide;
-              }}
-              aria-hidden={index !== activeIndex}
-            >
-              {work.images
-                .filter((image) => image.src)
-                .map((image) => (
-                  <img
-                    className={styles.gallery__media}
-                    key={image.id}
-                    src={image.src}
-                    alt={image.alt}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
+          {worksSmall.map((work, index) => {
+            const shouldLoadEagerly =
+              getCircularDistance(index, activeIndex, worksSmall.length) <= 1;
+            const shouldRenderMedia = loadedSlideIndexes.has(index);
 
-              {work.video
-                .filter((video) => video.src)
-                .map((video) => (
-                  <video
-                    className={styles.gallery__media}
-                    key={video.id}
-                    ref={(videoElement) => {
-                      videoRefs.current[index] = videoElement;
-                    }}
-                    src={video.src}
-                    aria-label={video.alt}
-                    autoPlay={index === activeIndex}
-                    controls
-                    loop
-                    muted
-                    playsInline
-                  />
-                ))}
-            </article>
-          ))}
+            return (
+              <article
+                className={`${styles.gallery__slide} ${
+                  index === activeIndex ? styles["gallery__slide--active"] : ""
+                }`}
+                key={work.id}
+                ref={(slide) => {
+                  slideRefs.current[index] = slide;
+                }}
+                aria-hidden={index !== activeIndex}
+              >
+                {work.images
+                  .filter((image) => image.src)
+                  .map((image) => (
+                    <img
+                      className={styles.gallery__media}
+                      key={image.id}
+                      src={shouldRenderMedia ? image.src : undefined}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      loading={shouldLoadEagerly ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  ))}
+
+                {work.video
+                  .filter((video) => video.src)
+                  .map((video) => (
+                    <video
+                      className={styles.gallery__media}
+                      key={video.id}
+                      ref={(videoElement) => {
+                        videoRefs.current[index] = videoElement;
+                      }}
+                      src={video.src}
+                      aria-label={video.alt}
+                      autoPlay={index === activeIndex}
+                      controls
+                      loop
+                      muted
+                      playsInline
+                      preload={index === activeIndex ? "auto" : "metadata"}
+                    />
+                  ))}
+              </article>
+            );
+          })}
         </div>
       </div>
 

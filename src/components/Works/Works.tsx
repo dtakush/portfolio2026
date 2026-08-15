@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { works } from "@/data/works";
 import { typography } from "@/utils/typography";
 import styles from "./Works.module.scss";
@@ -10,6 +10,24 @@ interface WorksProps {
 function Works({ onShowGallery }: WorksProps) {
   const [activeSlug, setActiveSlug] = useState(works[0].slug);
   const activeWork = works.find((work) => work.slug === activeSlug) ?? works[0];
+  const activeWorkIndex = works.findIndex((work) => work.slug === activeWork.slug);
+
+  useEffect(() => {
+    const preloadedImages = works.slice(1, 3).flatMap((work) =>
+      work.images.map((image) => {
+        const preloader = new Image();
+        preloader.loading = "eager";
+        preloader.decoding = "async";
+        preloader.src = image.src;
+
+        return preloader;
+      }),
+    );
+
+    return () => {
+      preloadedImages.length = 0;
+    };
+  }, []);
 
   return (
     <section className={styles.works} id="works" aria-labelledby="works-title">
@@ -114,7 +132,7 @@ function Works({ onShowGallery }: WorksProps) {
               key={`${image.id}-${image.src}`}
               src={image.src}
               alt={image.alt}
-              loading="lazy"
+              loading={activeWorkIndex <= 2 ? "eager" : "lazy"}
               decoding="async"
             />
           ))}

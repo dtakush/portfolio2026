@@ -8,6 +8,8 @@ export interface WorkImage {
   id: number;
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
 export interface Work {
@@ -23,8 +25,10 @@ export const worksSmall: Work[] = [
     title: "tate // campaign key visual // 2024",
     images: [
             { id: 1,
-            src: `${import.meta.env.BASE_URL}media/images/01_tate.png`,
-            alt: "баннеры tate", }
+            src: `${import.meta.env.BASE_URL}media/images/01_tate.webp`,
+            alt: "баннеры tate",
+            width: 1282,
+            height: 621, }
             ],
     video: [
             { id: 1,
@@ -51,8 +55,10 @@ export const worksSmall: Work[] = [
     title: "купер.бизнес // key visual // 2026",
     images: [
             { id: 1,
-            src: `${import.meta.env.BASE_URL}media/images/03_kuper.png`,
-            alt: "баннеры купер бизнес", }
+            src: `${import.meta.env.BASE_URL}media/images/03_kuper.webp`,
+            alt: "баннеры купер бизнес",
+            width: 1920,
+            height: 1080, }
             ],
     video: [
             { id: 1,
@@ -80,7 +86,9 @@ export const worksSmall: Work[] = [
     images: [
             { id: 1,
             src: `${import.meta.env.BASE_URL}media/images/04_brandice.png`,
-            alt: "баннеры brand ice", }
+            alt: "баннеры brand ice",
+            width: 1095,
+            height: 617, }
             ],
     video: [
             { id: 1,
@@ -93,8 +101,10 @@ export const worksSmall: Work[] = [
     title: "гагичат // ai campaign // 2024",
     images: [
             { id: 1,
-            src: `${import.meta.env.BASE_URL}media/images/05_gigachat.png`,
-            alt: "баннеры гагичат", }
+            src: `${import.meta.env.BASE_URL}media/images/05_gigachat.webp`,
+            alt: "баннеры гагичат",
+            width: 1095,
+            height: 616, }
             ],
     video: [
             { id: 1,
@@ -108,7 +118,9 @@ export const worksSmall: Work[] = [
     images: [
             { id: 1,
             src: `${import.meta.env.BASE_URL}media/images/06_samokat.png`,
-            alt: "иллюстрация самокат", }
+            alt: "иллюстрация самокат",
+            width: 1137,
+            height: 640, }
             ],
     video: [
             { id: 1,
@@ -122,7 +134,9 @@ export const worksSmall: Work[] = [
     images: [
             { id: 1,
             src: `${import.meta.env.BASE_URL}media/images/07_citydrive.png`,
-            alt: "баннеры ситидрайв", }
+            alt: "баннеры ситидрайв",
+            width: 1095,
+            height: 616, }
             ],
     video: [
             { id: 1,
@@ -135,8 +149,10 @@ export const worksSmall: Work[] = [
     title: "мясной дом бородина // key visual // 2026",
     images: [
             { id: 1,
-            src: `${import.meta.env.BASE_URL}media/images/08_mdb.png`,
-            alt: "баннеры ситидрайв", }
+            src: `${import.meta.env.BASE_URL}media/images/08_mdb.webp`,
+            alt: "баннеры ситидрайв",
+            width: 1920,
+            height: 1080, }
             ],
     video: [
             { id: 1,

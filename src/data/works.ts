@@ -44,17 +44,17 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_1.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_1.webp`,
         alt: "чашка чая для рекламной кампании Мегамаркета",
       },
       {
         id: 2,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_2.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_2.webp`,
         alt: "подарочная коробка для рекламной кампании Мегамаркета",
       },
       {
         id: 3,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_3.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_3.webp`,
         alt: "салат для рекламной кампании Мегамаркета",
       },
     ],
@@ -88,7 +88,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_4.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_4.webp`,
         alt: "посты свет в руках",
       },
     ],
@@ -121,7 +121,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_5.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_5.webp`,
         alt: "карточки фрутоняня",
       },
     ],
@@ -154,7 +154,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_6.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_6.webp`,
         alt: "макет сберегаем вместе",
       },
     ],
@@ -186,7 +186,7 @@ export const works: Work[] = [
     images: [
       {
         id: 1,
-        src: `${import.meta.env.BASE_URL}media/images/work_pic_7.png`,
+        src: `${import.meta.env.BASE_URL}media/images/work_pic_7.webp`,
         alt: "цвета ситидрайв",
       },
       {
