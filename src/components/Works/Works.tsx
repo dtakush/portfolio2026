@@ -114,6 +114,8 @@ function Works({ onShowGallery }: WorksProps) {
               key={`${image.id}-${image.src}`}
               src={image.src}
               alt={image.alt}
+              loading="lazy"
+              decoding="async"
             />
           ))}
 

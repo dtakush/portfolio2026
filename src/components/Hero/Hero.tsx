@@ -20,12 +20,16 @@ function Hero() {
         className={styles.hero__portrait}
         src={`${import.meta.env.BASE_URL}media/images/photo.png`}
         alt="Портрет Дарьи Такуш"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
 
       <img
         className={styles.hero__greeting}
         src={`${import.meta.env.BASE_URL}media/images/privet.png`}
         alt="Привет!"
+        decoding="async"
       />
 
       <div className={styles.hero__content}>

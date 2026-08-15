@@ -109,6 +109,8 @@ function WroksGallery() {
                     key={image.id}
                     src={image.src}
                     alt={image.alt}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ))}
 
