@@ -208,7 +208,8 @@
 
 .works__decoration--cityPlus {
   top: 60px;
-  left: 258px;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .works__decoration--cityArrow {
@@ -354,7 +355,7 @@
 
   .works__decoration--cityPlus {
     top: 14%;
-    left: 29%;
+    left: 50%;
   }
 
   .works__decoration--cityArrow {
@@ -548,9 +549,12 @@
     width: clamp(18px, 5vw, 30px);
   }
 
-  .works__decoration--plusFirst,
-  .works__decoration--cityPlus {
+  .works__decoration--plusFirst {
     left: 29%;
+  }
+
+  .works__decoration--cityPlus {
+    left: 50%;
   }
 
   .works__decoration--plusSecond {
@@ -574,5 +578,22 @@
     height: auto;
     margin: 40px 0 0 auto;
     transform: none;
+  }
+}
+
+@media (max-width: 879px) {
+  .works__gallery,
+  .works__gallery--citydrive {
+    column-gap: clamp(26px, 7vw, 36px);
+  }
+
+  .works__decoration--plusFirst {
+    left: calc(33.333% - clamp(4px, 1.17vw, 6px));
+    translate: -50% 0;
+  }
+
+  .works__decoration--plusSecond {
+    left: calc(66.667% + clamp(4px, 1.17vw, 6px));
+    translate: -50% 0;
   }
 }
